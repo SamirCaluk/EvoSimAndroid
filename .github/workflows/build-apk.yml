@@ -27,11 +27,11 @@ jobs:
         run: unzip -o EvoSimAndroid-source.zip -d project
 
       - name: Build debug APK
-        working-directory: project
+        working-directory: project/EvoSimAndroid
         run: gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: EvoSim-debug-apk
-          path: project/app/build/outputs/apk/debug/app-debug.apk
+          path: project/EvoSimAndroid/app/build/outputs/apk/debug/app-debug.apk
